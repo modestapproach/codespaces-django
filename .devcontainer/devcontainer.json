@@ -4,20 +4,22 @@
     "cpus": 4
   },
   "waitFor": "onCreateCommand",
-  "updateContentCommand": "pip install -r requirements.txt && python manage.py migrate",
+  "updateContentCommand": "pip install -r requirements.txt && python Todo/manage.py migrate",
   "postCreateCommand": "cp .env.example .env",
   "postAttachCommand": {
-    "server": "python manage.py runserver"
+    "server": "python Todo/manage.py runserver"
   },
   "customizations": {
     "codespaces": {
       "openFiles": [
-        "hello_world/templates/index.html"
+        "Todo/core/templates/index.html",
+        "README.md"
       ]
     },
     "vscode": {
       "extensions": [
-        "ms-python.python"
+        "ms-python.python",
+        "batisteo.vscode-django"
       ]
     }
   },
