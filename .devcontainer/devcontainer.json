@@ -1,33 +1,33 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "hostRequirements": {
-    "cpus": 4
-  },
-  "waitFor": "onCreateCommand",
-  "updateContentCommand": "pip install -r requirements.txt && python Todo/manage.py migrate",
-  "postCreateCommand": "cp .env.example .env",
-  "postAttachCommand": {
-    "server": "python Todo/manage.py runserver"
-  },
-  "customizations": {
-    "codespaces": {
-      "openFiles": [
-        "Todo/core/templates/index.html",
-        "README.md"
-      ]
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "hostRequirements": {
+      "cpus": 4
     },
-    "vscode": {
-      "extensions": [
-        "ms-python.python",
-        "batisteo.vscode-django"
-      ]
-    }
-  },
-  "portsAttributes": {
-    "8000": {
-      "label": "Application",
-      "onAutoForward": "openPreview"
-    }
-  },
-  "forwardPorts": [8000]
-}
+    "waitFor": "onCreateCommand",
+    "updateContentCommand": "pip install -r requirements.txt && python Todo/manage.py migrate",
+    "postCreateCommand": "cp .env.example .env",
+    "postAttachCommand": {
+      "server": "python Todo/manage.py runserver 0.0.0.0:8000"
+    },
+    "customizations": {
+      "codespaces": {
+        "openFiles": [
+          "Todo/core/templates/index.html",
+          "README.md"
+        ]
+      },
+      "vscode": {
+        "extensions": [
+          "ms-python.python",
+          "batisteo.vscode-django"
+        ]
+      }
+    },
+    "portsAttributes": {
+      "8000": {
+        "label": "Application",
+        "onAutoForward": "openPreview"
+      }
+    },
+    "forwardPorts": [8000]
+  }
