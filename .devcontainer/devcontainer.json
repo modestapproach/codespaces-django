@@ -4,15 +4,15 @@
       "cpus": 4
     },
     "waitFor": "onCreateCommand",
-    "updateContentCommand": "pip install -r requirements.txt && python Todo/manage.py migrate",
+    "updateContentCommand": "pip install -r requirements.txt && python Todo-project/manage.py migrate",
     "postCreateCommand": "cp .env.example .env",
     "postAttachCommand": {
-      "server": "python Todo/manage.py runserver 0.0.0.0:8000"
+      "server": "python Todo-project/manage.py runserver 0.0.0.0:8000"
     },
     "customizations": {
       "codespaces": {
         "openFiles": [
-          "Todo/core/templates/index.html",
+          "Todo-project/core/templates/index.html",
           "README.md"
         ]
       },
